@@ -18,7 +18,7 @@ namespace program
             try
             {
                 IWeatherDataService service = obj.GetWeatherDataService(WeatherDataServiceFactory.OPEN_WEATHER_MAP);
-                WeatherData data = service.GetWeatherData(location);
+                WeatherData data = service.GetWeatherData(location);                                                    //get data
                 System.Console.WriteLine("\n city :" + data.City.Name+"\n temp: "+data.Temperature.Value.ToString()+"\n clouds mode :"+data.Clouds.Name);
                 System.Console.Read();
             }

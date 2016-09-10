@@ -11,7 +11,7 @@ namespace WeatherApi
 
     class openWeatherDataService : IWeatherDataService
     {
-        private static openWeatherDataService instance;
+        private static openWeatherDataService instance;  //singeltone
 
         private openWeatherDataService() { }
 
@@ -42,7 +42,7 @@ namespace WeatherApi
             {
                 xml = client.DownloadString(url);                                          //download xml according to url
                 XDocument doc = XDocument.Parse(xml);
-                data = (from c in doc.Descendants("current")
+                data = (from c in doc.Descendants("current")                        //parseXML
                                     select new WeatherData
                                     {
                                         City = (from city in c.Descendants("city")

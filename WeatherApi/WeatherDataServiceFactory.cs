@@ -17,7 +17,7 @@ namespace WeatherApi
 
         private WeatherDataServiceFactory() { }
 
-        public static WeatherDataServiceFactory Instance
+        public static WeatherDataServiceFactory Instance  //singeltone
         {
             get
             {
